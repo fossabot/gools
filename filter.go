@@ -7,7 +7,9 @@ package gools
 	paramater.
 
 	* elements -> Array of any data type
-	* filterFunction -> Function used for filtering. Should return a boolean upon return
+	* filterFn -> Function used for filtering. Should return a boolean upon return
+
+	=> Slice of elements of DType
 */
 func Filter[DType any](elements []DType, filterFn func(element DType) bool) []DType {
 	indexedItems := make([]Dtype, 0)

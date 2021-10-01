@@ -26,7 +26,3 @@ func TestFilter_Simple(t *testing.T) {
 		}
 	}
 }
-
-func TestFilter_Complex(t *testing.T) {
-
-}
