@@ -3,19 +3,14 @@ package gools
 
 // Filter ...
 /*
-	- Allows you to filter a slice of elements based on a Filter Function that is passed as a second
-	paramater.
-
-	* elements -> Array of any data type
-	* filterFn -> Function used for filtering. Should return a boolean upon return
-
-	=> Slice of elements of DType
+	Iterates over elements of collection, returning an array of all elements predicate returns truthy for. 
+	The predicate is invoked with three arguments: (value, index|key, collection).
 */
-func Filter[DType any](elements []DType, filterFn func(element DType) bool) []DType {
+func Filter[DType any](collection []DType, predicate func(element DType) bool) []DType {
 	indexedItems := make([]Dtype, 0)
 
-	for _, each := range elements {
-		if filterFn(each) {
+	for _, each := range collection {
+		if predicate(each) {
 			indexedItems = append(indexedItems, each)
 		}
 	}
